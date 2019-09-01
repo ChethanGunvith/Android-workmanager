@@ -70,11 +70,14 @@ Now let's say that I want option of updated the UI when my work finishes, I can 
 WorkManager.getInstance().getWorkInfoByIdLiveData(uploadPhotoRequest.id)
 ```
 
-#### behind the scenes
+#### Behind the scenes
 Work manager chooses between job scheduler and a combination of alarmmanager and broadcast receivers. when running to guarantee that the work will keep running all of that information about a queued work is kept in a work manager bandaged database so that I can be resumed if it's ever stopped. 
+
+By defult, work manager does its work off the main thread using executor behind the scenes. 
 
 #### chains of dependent work
 Work manager truly shines is when you create chains of dependent work, let's say that I want to add a filter to multiple pictures compress those pictures together and then batch upload the compressed file to share with the world assuming you created all of your work
+
 
 
 Below link helps to learn more on it
